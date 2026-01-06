@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三田村Gemini先生：勝利への設計図</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-xl">
+        <h1 class="text-3xl font-bold text-center text-blue-800 mb-2">🏋️‍♂️ 三田村Gemini先生</h1>
+        <p class="text-center text-gray-600 mb-8">〜勝利への設計図・AI相談室〜</p>
+        
+        <form method="POST" class="space-y-6">
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 space-y-4 rounded">
+                <h2 class="font-bold text-lg text-blue-800">1. あなたの情報（必須）</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">相談者氏名</label>
+                        <input type="text" name="name" required placeholder="例：ウエイト 太郎" class="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">メールアドレス</label>
+                        <input type="email" name="email" required placeholder="結果がここに届きます" class="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h2 class="font-bold text-lg text-gray-800 border-b pb-1">2. 身体データ</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">学年・年齢</label>
+                        <input type="text" name="grade" placeholder="高2" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">性別</label>
+                        <select name="sex" class="w-full p-2 border rounded">
+                            <option>男</option>
+                            <option>女</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">体重 (kg)</label>
+                        <input type="number" step="0.1" name="weight" required class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700">MBTI (任意)</label>
+                        <input type="text" name="mbti" placeholder="ISTPなど" class="w-full p-2 border rounded">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700">週の練習回数</label>
+                    <input type="text" name="freq" placeholder="週5回" class="w-full p-2 border rounded">
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="font-bold text-lg text-gray-800 border-b pb-1">3. ベスト記録 (kg)</h2>
+                <div class="grid grid-cols-3 gap-2">
+                    <div>
+                        <label class="text-xs font-bold block text-center">Snatch</label>
+                        <input type="number" name="snatch" class="w-full p-2 border rounded text-center">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold block text-center">C&J</label>
+                        <input type="number" name="cj" class="w-full p-2 border rounded text-center">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold block text-center">Squat</label>
+                        <input type="number" name="sq" class="w-full p-2 border rounded text-center">
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="font-bold text-lg text-gray-800 border-b pb-1">4. コンディション</h2>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700">怪我・痛みの場所</label>
+                    <input type="text" name="pain" placeholder="特になし、右膝など" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700">痛みレベル (0:無痛 〜 10:激痛)</label>
+                    <div class="flex items-center gap-2">
+                        <input type="range" name="pain_level" min="0" max="10" value="0" oninput="this.nextElementSibling.value = this.value" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <output class="font-bold text-lg w-8 text-center">0</output>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <h2 class="font-bold text-lg text-gray-800 border-b pb-1">5. 三田村先生への相談</h2>
+                <textarea name="consultation" rows="5" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" placeholder="例：試合でどうしても緊張して失敗してしまいます。メンタルの作り方を教えてください。"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-4 rounded-lg shadow-lg hover:from-blue-700 hover:to-blue-900 transition transform hover:scale-105">
+                診断結果を受け取る
+            </button>
+        </form>
+    </div>
+</body>
+</html>
